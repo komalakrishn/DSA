@@ -1,5 +1,5 @@
 import java.util.*;
-public class ten{
+public class binaryTOdec{
     public static void  bintodec(int n ){
         int p = 0;
         int dec = 0;

@@ -1,5 +1,5 @@
 import java.util.*;
-public class twentyseven {
+public class tiling{
     public static int tiling(int n){
         if (n==1|| n ==0 ){
             return 1;

@@ -1,5 +1,5 @@
 import java.util.*;
-public class eighteen{
+public class matrix{
     public static void main (String args[]){
       
       int matrix[][]= new int[3][3];
