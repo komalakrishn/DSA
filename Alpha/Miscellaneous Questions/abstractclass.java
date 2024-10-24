@@ -1,80 +1,80 @@
 public class abstractclass {
-    static abstract class shape{
-        String shapename ;
+    static abstract class Shape {
+        protected String shapename;
         abstract double area();
-
         abstract double perimeter();
     }
-    static class square extends shape{
-        double side ;
 
-        square(double side){
-            this.side = side ;
-            this.shapename = "square";
+    static class Square extends Shape {
+        double side;
+
+        Square(double side) {
+            this.side = side;
+            this.shapename = "Square";
         }
+
         @Override
         double area() {
-            double area = side * side;
-            return area;
+            return side * side;
         }
 
         @Override
         double perimeter() {
-            double perimeter = side *4;
-            return perimeter;
+            return 4 * side;
         }
-
     }
-    static class circle extends shape{
+
+    static class Circle extends Shape {
         double radius;
-        
-        circle(double radius){
+
+        Circle(double radius) {
             this.radius = radius;
-            this.shapename = "circle";
+            this.shapename = "Circle";
         }
+
         @Override
         double area() {
-            return radius*radius*Math.PI;
+            return Math.PI * radius * radius;
         }
 
         @Override
         double perimeter() {
-            return 2*radius*Math.PI;
+            return 2 * Math.PI * radius;
         }
-        
     }
 
-    static class rectangle extends shape{
-        double length ; 
-        double width ;
+    static class Rectangle extends Shape {
+        double length;
+        double width;
 
-        rectangle(double length , double width ){
+        Rectangle(double length, double width) {
             this.length = length;
-            this.width = width ;
-            this.shapename = "rectangle";
+            this.width = width;
+            this.shapename = "Rectangle";
         }
 
-        
+        @Override
         double area() {
             return length * width;
         }
 
         @Override
         double perimeter() {
-            return 2*(length + width);
+            return 2 * (length + width);
         }
-        
     }
 
-    public static void main(String args[]){
-        shape square = new square(4);
+    public static void main(String[] args) {
+        Shape square = new Square(4);
         System.out.println(square.shapename + " Area: " + square.area());
         System.out.println(square.shapename + " Perimeter: " + square.perimeter());
-        shape rectangle = new rectangle(3,4);
+
+        Shape rectangle = new Rectangle(3, 4);
         System.out.println(rectangle.shapename + " Area: " + rectangle.area());
         System.out.println(rectangle.shapename + " Perimeter: " + rectangle.perimeter());
-        shape circle = new circle(5.5);
-        System.out.println(circle.shapename + " Area: " +circle.area());
+
+        Shape circle = new Circle(5.5);
+        System.out.println(circle.shapename + " Area: " + circle.area());
         System.out.println(circle.shapename + " Perimeter: " + circle.perimeter());
     }
 }
